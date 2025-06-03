@@ -1,5 +1,5 @@
 // idocohen963@gmail.com
-#define DOCTEST_CONFIG_IMPLEMENT
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #define private public
 #include "../include/Graph.hpp"
@@ -678,16 +678,3 @@ TEST_CASE("Edge Cases and Stress Tests") {
     }
 }
 
-// Main function
-int main(int argc, char** argv) {
-    doctest::Context context;
-    context.applyCommandLine(argc, argv);
-    
-    int res = context.run();
-    
-    if (context.shouldExit()) {
-        return res;
-    }
-    
-    return res;
-}
