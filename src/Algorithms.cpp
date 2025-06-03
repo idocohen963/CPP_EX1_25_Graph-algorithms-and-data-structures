@@ -21,7 +21,7 @@ Graph Algorithms::bfs(const Graph& g, int source) {
     bool* visited = new bool[numVertices];
     int* parent = new int[numVertices];
     
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         visited[i] = false;
         parent[i] = -1;  // -1 indicates no parent
     }
@@ -56,7 +56,7 @@ Graph Algorithms::bfs(const Graph& g, int source) {
     }
     
     // Build the BFS tree using the parent array
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         if (parent[i] != -1) {
             bfsTree.addEdge(parent[i], i);
         }
@@ -103,7 +103,7 @@ Graph Algorithms::dfs(const Graph& g, int source) {
     bool* visited = new bool[numVertices];
     int* parent = new int[numVertices];
     
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         visited[i] = false;
         parent[i] = -1;  // -1 indicates no parent
     }
@@ -121,14 +121,13 @@ Graph Algorithms::dfs(const Graph& g, int source) {
 bool Algorithms::hasNegativeWeights(const Graph& g) {
     int numVertices = g.getNumVertices();
     
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         const Graph::EdgeNode* neighbor = g.getNeighbors(i);
         
         while (neighbor != nullptr) {
             if (neighbor->weight < 0) {
                 return true;
             }
-            
             neighbor = neighbor->next;
         }
     }
@@ -157,7 +156,7 @@ Graph Algorithms::dijkstra(const Graph& g, int source) {
     int* distance = new int[numVertices];
     int* parent = new int[numVertices];
     
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         distance[i] = INT_MAX;
         parent[i] = -1;  // -1 indicates no parent
     }
@@ -201,7 +200,7 @@ Graph Algorithms::dijkstra(const Graph& g, int source) {
     }
     
     // Build the shortest paths tree using the parent array
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         if (parent[i] != -1) {
             shortestPathsTree.addEdge(parent[i], i, distance[i] - distance[parent[i]]);
         }
@@ -224,7 +223,7 @@ bool Algorithms::isConnected(const Graph& g) {
     // Use a minimal BFS traversal to check if all vertices are reachable from vertex 0
     bool* visited = new bool[numVertices];
     
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         visited[i] = false;
     }
     
@@ -276,7 +275,7 @@ Graph Algorithms::prim(const Graph& g) {
     int* key = new int[numVertices];
     int* parent = new int[numVertices];
     
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         key[i] = INT_MAX;
         parent[i] = -1;  // -1 indicates no parent
     }
@@ -288,7 +287,7 @@ Graph Algorithms::prim(const Graph& g) {
     PriorityQueue pq(numVertices);
     
     // Add all vertices to priority queue
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         pq.insert(i, key[i]);
     }
     
@@ -318,7 +317,7 @@ Graph Algorithms::prim(const Graph& g) {
     }
     
     // Build the MST using the parent array
-    for (int i = 1; i < numVertices; ++i) {  // Start from 1 because vertex 0 has no parent
+    for (int i = 1; i < numVertices; i++) {  // Start from 1 because vertex 0 has no parent
         if (parent[i] != -1) {
             mst.addEdge(parent[i], i, key[i]);
         }
@@ -332,9 +331,9 @@ Graph Algorithms::prim(const Graph& g) {
 }
 
 void Algorithms::SortEdges(Edge* edges, int edgeCount) {
-    for (int i = 0; i < edgeCount - 1; ++i) {
+    for (int i = 0; i < edgeCount - 1; i++) {
         int minIdx = i;
-        for (int j = i + 1; j < edgeCount; ++j) {
+        for (int j = i + 1; j < edgeCount; j++) {
             if (edges[j] < edges[minIdx]) {
                 minIdx = j;
             }
@@ -359,7 +358,7 @@ Graph Algorithms::kruskal(const Graph& g) {
     int edgeCount = 0;
     
     // Collect all edges
-    for (int i = 0; i < numVertices; ++i) {
+    for (int i = 0; i < numVertices; i++) {
         const Graph::EdgeNode* neighbor = g.getNeighbors(i);
         
         while (neighbor != nullptr) {
@@ -382,7 +381,7 @@ Graph Algorithms::kruskal(const Graph& g) {
     UnionFind uf(numVertices);
     
     // Process edges in order of increasing weight
-    for (int i = 0; i < edgeCount; ++i) {
+    for (int i = 0; i < edgeCount; i++) {
         int src = edges[i].src;
         int dest = edges[i].dest;
         

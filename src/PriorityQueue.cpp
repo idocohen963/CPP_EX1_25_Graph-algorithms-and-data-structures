@@ -12,7 +12,7 @@ PriorityQueue::PriorityQueue(int capacity) : capacity(capacity), size(0) {
     positions = new int[capacity];
     
     // Initialize positions array with -1 (not in heap)
-    for (int i = 0; i < capacity; ++i) {
+    for (int i = 0; i < capacity; i++) {
         positions[i] = -1;
     }
 }

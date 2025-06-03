@@ -8,7 +8,7 @@ UnionFind::UnionFind(int size) : size(size) {
     rank = new int[size];
     
     // Initialize: each element is its own parent with rank 0
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; i++) {
         parent[i] = i;
         rank[i] = 0;
     }
