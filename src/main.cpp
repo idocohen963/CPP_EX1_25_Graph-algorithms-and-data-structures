@@ -1,3 +1,5 @@
+// idocohen963@gmail.com
+#include <iostream>
 #include "../include/Graph.hpp"
 #include "../include/Algorithms.hpp"
 
@@ -31,6 +33,7 @@ int main() {
     // Add the edge back
     cout << "\nAdding the edge back" << endl;
     g.addEdge(1, 3, 2);
+    g.print_graph();
     
     // Demonstrate BFS
     cout << "\nDemonstrating BFS algorithm from vertex 0:" << endl;

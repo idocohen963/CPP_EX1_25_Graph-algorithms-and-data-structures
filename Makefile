@@ -1,4 +1,4 @@
-# Makefile for Graph Implementation
+# idocohen963@gmail.com
 
 # Compiler and flags
 CXX = g++

@@ -1,10 +1,8 @@
-// Graph.hpp - הגדרת מחלקת Graph המייצגת גרף באמצעות רשימת שכנויות
+// idocohen963@gmail.com
 
 #ifndef GRAPH_HPP
 #define GRAPH_HPP
-
 #include <iostream>
-
 namespace graph {
 
 /**

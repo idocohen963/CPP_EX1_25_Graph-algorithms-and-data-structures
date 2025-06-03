@@ -1,4 +1,4 @@
-// PriorityQueue.hpp - הגדרת מחלקת תור עדיפויות
+// idocohen963@gmail.com
 
 #ifndef PRIORITY_QUEUE_HPP
 #define PRIORITY_QUEUE_HPP

@@ -1,4 +1,4 @@
-// Algorithms.hpp - הגדרת מחלקת Algorithms המכילה אלגוריתמים על גרפים
+// idocohen963@gmail.com
 
 #ifndef ALGORITHMS_HPP
 #define ALGORITHMS_HPP

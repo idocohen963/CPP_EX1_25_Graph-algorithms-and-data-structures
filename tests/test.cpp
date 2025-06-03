@@ -1,3 +1,4 @@
+// idocohen963@gmail.com
 #define DOCTEST_CONFIG_IMPLEMENT
 #include "doctest.h"
 #define private public
@@ -23,7 +24,7 @@ TEST_CASE("Graph Construction and Basic Operations") {
         CHECK_THROWS_AS(Graph(0), std::invalid_argument);
     }
     
-    SUBCASE("Add and Check Edges") {
+    SUBCASE("Add Edges") {
         Graph g(5);
         g.addEdge(0, 1);
         g.addEdge(0, 2, 3);

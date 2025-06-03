@@ -1,4 +1,4 @@
-// Queue.hpp - הגדרת מחלקת תור בסיסית
+// idocohen963@gmail.com
 
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
