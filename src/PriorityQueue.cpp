@@ -1,6 +1,5 @@
 #include "../include/PriorityQueue.hpp"
 #include <stdexcept>
-#include <climits>
 
 namespace graph {
 

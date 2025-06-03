@@ -3,8 +3,6 @@
 #include "../include/PriorityQueue.hpp"
 #include "../include/UnionFind.hpp"
 #include <stdexcept>
-#include <algorithm>
-#include <climits>
 
 namespace graph {
 
@@ -137,6 +135,7 @@ bool Algorithms::hasNegativeWeights(const Graph& g) {
     
     return false;
 }
+const int INT_MAX = 2147483647;
 
 Graph Algorithms::dijkstra(const Graph& g, int source) {
     int numVertices = g.getNumVertices();
