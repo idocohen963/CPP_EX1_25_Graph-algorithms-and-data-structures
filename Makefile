@@ -2,7 +2,7 @@
 
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra -pedantic
+CXXFLAGS = -std=c++11 -Wall -Wextra -pedantic -g
 
 # Directories
 SRC_DIR = src
@@ -57,7 +57,21 @@ test: $(OBJECTS) $(TEST_OBJ)
 # Run valgrind on main executable
 valgrind: Main
 	valgrind --leak-check=full --show-leak-kinds=all ./$(MAIN_EXE)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(TEST_EXE)
 
 # Clean up
 clean:
 	rm -rf $(BUILD_DIR) $(MAIN_EXE) $(TEST_EXE)
+
+# מילון דגלים, קיצורים ומשתנים אוטומטיים:
+# -p                  : ב-mkdir - יוצר גם תיקיות אב חסרות (parents)
+# -rf                 : ב-rm - מסיר קבצים/תיקיות רקורסיבית וללא בקשת אישור (recursive, force)
+# -std=c++11          : לקמפלר - השתמש בתקן C++11
+# -Wall               : לקמפלר - הצג את כל האזהרות
+# -Wextra             : לקמפלר - הצג אזהרות נוספות
+# -pedantic           : לקמפלר - הקפדה על תקן C++
+# -g                  : לקמפלר - הוסף מידע דיבאג
+# --leak-check=full   : ל-valgrind - בדיקה מלאה של דליפות זיכרון
+# --show-leak-kinds=all : ל-valgrind - הצג את כל סוגי הדליפות
+# $@                  :משתנה אוטומטי במייקפייל שמייצג את שם המטרה (target) הנוכחית.
+# $^                  : משתנה אוטומטי במייקפייל שמייצג את כל התלויות (dependencies) של המטרה הנוכחית, מופרדות ברווחים.
